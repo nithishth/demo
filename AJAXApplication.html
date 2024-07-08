@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button">get data</button>
+    <table id="data"></table>
+    <script>
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+            const xmlDoc = xhttp.responseXML;
+            const cd = xmlDoc.getElementsByTagName("CD");
+            myFunction(cd);
+            }
+            xhttp.open("GET", "catelog.xml");
+            xhttp.send(); 
+        }
+        function myFunction(cd) {
+            let table = "<tr><th>Artist</th><th>Title</tr>";
+                for(let i= 0; i < cd.length; i++){
+                    table += "<tr><td>" +cd[i].getElementsByTagName("ARTIST")[0].
+                }
+        }
+    </script>
+</body>
+</html>
